@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tricky trivia</title>
+    <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+
+</head>
+
+<body background ="https://images2.alphacoders.com/642/thumb-1920-642540.png">
+    <!-- <p><a href=https://wall.alphacoders.com/big.php?i=642540> </a> </p> questions how to fit background? -->
+            <style>
+                #headings {
+            font-family: 'Mali', cursive;
+            text-align: center;
+            }
+            .col-md-6 {
+            background: white;
+            text-align: center;
+            opacity: .7;
+            margin-left: 25%;
+            margin-right: 25%;
+            border: 1px solid #021a40;
+            }
+            html, body {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+            }
+            background {
+                background: center;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+            }
+    
+            </style>
+            <div id="headings">
+                <h1>Tricky Trivia</h1>
+                <p id="display">00:00</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            1.What earth are Rick and Morty from?<br>
+                            <input id="correct" type="radio" name="num1" value="C-137"> C-137
+                            <input type="radio" name="num1" value="J-19 Zeta-7"> J-19 Zeta-7
+                            <input type="radio" name="num1" value="35c"> 35c
+                            <input type="radio" name="num1" value="C-132"> C-132
+                            <br><br><br><br>
+                        </div>
+
+                        <div>
+                            2.What was the name of the alternate dimension Rick made for Beth? <br>
+                            <input type="radio" name="num2" value="Rainbow-World"> Rainbow world
+                            <input type="radio" name="num2" value="Space-Land"> Space land
+                            <input id="correct" type="radio" name="num2" value="Froopy-Land"> Froopy land
+                            <input type="radio" name="num2" value="Playdoh-Planet"> Playdoh planet
+                            <br><br><br><br>
+                        </div>
+
+                        <div>
+                            3.What park ride did Jerry get on to attempt to kill Rick? <br>
+                            <input type="radio" name="num3" value="Haunted-Liver"> Haunted Liver
+                            <input id="correct" type="radio" name="num3" value="Whirly-Dirly"> Whirly Dirly
+                            <input type="radio" name="num3" value="Pirates-Pancreas"> Pirates of The Pancreas
+                            <input type="radio" name="num3" value="Spleen-Splitter">Spleen Splitter
+                            <br><br><br><br>
+                        </div>
+
+                        <div>
+                        <div id="button-view"></div>
+                            <div id="result-button"></div>    
+                            <button type="button" class="btn btn-primary btn-lg">Submit</button>
+                            
+
+
+                    </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+
+
+                    $("#button-view").click(function(event) {
+                        $("#result-button").simplePrompt({
+                            message: "asuhhh"
+                        })
+                    }); 
+                    // STOPWATCH ACTIVITY (SOLUTION)
+// =============================
+
+// This code will run as soon as the page loads
+// window.onload = function() {
+//   $("#lap").on("click", stopwatch.recordLap);
+//   $("#stop").on("click", stopwatch.stop);
+//   $("#reset").on("click", stopwatch.reset);
+//   $("#start").on("click", stopwatch.start);
+// };
+
+// //  Variable that will hold our setInterval that runs the stopwatch
+// var intervalId;
+
+// // prevents the clock from being sped up unnecessarily
+// var clockRunning = false;
+
+// // Our stopwatch object
+// var stopwatch = {
+
+//   time: 0,
+//   lap: 1,
+
+//   reset: function() {
+
+//     stopwatch.time = 0;
+//     stopwatch.lap = 1;
+
+//     // DONE: Change the "display" div to "00:00."
+//     $("#display").text("00:00");
+
+//     // DONE: Empty the "laps" div.
+//     $("#laps").text("");
+//   },
+//   start: function() {
+
+//     // DONE: Use setInterval to start the count here and set the clock to running.
+//     if (!clockRunning) {
+//       intervalId = setInterval(stopwatch.count, 1000);
+//       clockRunning = true;
+//     }
+//   },
+//   stop: function() {
+
+//     // DONE: Use clearInterval to stop the count here and set the clock to not be running.
+//     clearInterval(intervalId);
+//     clockRunning = false;
+//   },
+//   recordLap: function() {
+
+//     // DONE: Get the current time, pass that into the stopwatch.timeConverter function,
+//     //       and save the result in a variable.
+//     var converted = stopwatch.timeConverter(stopwatch.time);
+
+//     // DONE: Add the current lap and time to the "laps" div.
+//     $("#laps").append("<p>Lap " + stopwatch.lap + " : " + converted + "</p>");
+
+//     // DONE: Increment lap by 1. Remember, we can't use "this" here.
+//     stopwatch.lap++;
+//   },
+//   count: function() {
+
+//     // DONE: increment time by 1, remember we cant use "this" here.
+//     stopwatch.time++;
+
+//     // DONE: Get the current time, pass that into the stopwatch.timeConverter function,
+//     //       and save the result in a variable.
+//     var converted = stopwatch.timeConverter(stopwatch.time);
+//     console.log(converted);
+
+//     // DONE: Use the variable we just created to show the converted time in the "display" div.
+//     $("#display").text(converted);
+//   },
+//   timeConverter: function(t) {
+
+//     var minutes = Math.floor(t / 60);
+//     var seconds = t - (minutes * 60);
+
+//     if (seconds < 10) {
+//       seconds = "0" + seconds;
+//     }
+
+//     if (minutes === 0) {
+//       minutes = "00";
+//     }
+//     else if (minutes < 10) {
+//       minutes = "0" + minutes;
+//     }
+
+//     return minutes + ":" + seconds;
+//   }
+// };
+
+
+// Solution if you choose not to put it in an object
+
+var time = 0;
+var lap = 1;
+function reset() {
+
+  time = 0;
+  lap = 1;
+
+  $("#display").text("00:00");
+  $("#laps").text("");
+
+}
+
+function start() {
+  intervalId = setInterval(count, 1000);
+}
+
+function stop() {
+
+  console.log("stopping");
+  clearInterval(intervalId);
+
+}
+
+function recordLap() {
+
+  var converted = timeConverter(time);
+  $("#laps").append("<p>Lap " + lap + " : " + converted + "</p>");
+  lap++;
+
+}
+
+function count() {
+
+  time++;
+  var converted = timeConverter(time);
+  $("#display").text(converted);
+
+}
+
+function timeConverter(t) {
+
+  var minutes = Math.floor(t / 60);
+  var seconds = t - (minutes * 60);
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  if (minutes === 0) {
+    minutes = "00";
+  }
+  else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  return minutes + ":" + seconds;
+}
+
+            
+            </script>
+
+</body>
+
+</html>
